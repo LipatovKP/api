@@ -1,18 +1,18 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/login', [AuthController::class, 'login']);
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Token-based API routes can be registered here if needed. Session-auth
+| endpoints are registered in routes/web.php under the /api prefix so they
+| run through the web middleware stack.
+|
+*/
 
-Route::middleware('auth')->group(function (): void {
-    Route::get('/me', [AuthController::class, 'me']);
-    Route::post('/logout', [AuthController::class, 'logout']);
-
-    Route::get('/settings', [SettingsController::class, 'show']);
-    Route::put('/settings', [SettingsController::class, 'update']);
-
-    Route::get('/reviews', [ReviewController::class, 'index']);
+Route::middleware('api')->group(function (): void {
+    //
 });
